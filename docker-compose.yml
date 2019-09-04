@@ -1,0 +1,25 @@
+version: '2'
+
+volumes:
+  db:
+    driver: local
+
+services:
+  db:
+    image: mariadb
+    restart: on-failure
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=dolibarr
+      - MYSQL_PASSWORD=dolibarr
+      - MYSQL_DATABASE=dolibarr
+      - MYSQL_USER=dolibarr
+
+  dolibarr:
+    image: inglebard/dolibarr_ready:latest
+    restart: on-failure
+    volumes:
+      - dolibarr_app:/var/www/html
+    ports:
+     - 80:80
