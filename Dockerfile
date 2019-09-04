@@ -6,14 +6,17 @@ ENV DOLI_READY_VERSION 9
 
 RUN apt-get update -q && apt-get upgrade -yq \
 	&& apt-get install -yq \
-		libpng-dev \
-		libjpeg-dev \
+	libpng-dev \
+	libjpeg-dev \
     libxml2-dev \
     default-mysql-client \
-		unzip \
+	unzip \
+	libicu-dev \
+	g++ \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-	&& docker-php-ext-install mysqli pdo pdo_mysql gd soap zip
+	&& docker-php-ext-configure intl \
+	&& docker-php-ext-install mysqli pdo pdo_mysql gd soap zip intl
 
 
 EXPOSE 80
