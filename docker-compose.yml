@@ -11,15 +11,20 @@ services:
     volumes:
       - db:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=dolibarr
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_PASSWORD=dolibarr
       - MYSQL_DATABASE=dolibarr
       - MYSQL_USER=dolibarr
 
   dolibarr:
-    image: inglebard/dolibarr_ready:latest
+    image: dolibarr_ready:latest
     restart: on-failure
     volumes:
-      - dolibarr_app:/var/www/html
+      - /home/david/Bureau/test26/www/htdocs:/var/www/html    
+    environment:
+      - WWW_USER_ID=1000
+      - WWW_GROUP_ID=1000
+      - PHP_INI_DATE_TIMEZONE='Europe/Paris'
     ports:
-     - 80:80
+     - 8888:80
+  
