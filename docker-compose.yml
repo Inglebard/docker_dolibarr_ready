@@ -15,6 +15,7 @@ services:
       - MYSQL_PASSWORD=dolibarr
       - MYSQL_DATABASE=dolibarr
       - MYSQL_USER=dolibarr
+    command: --character-set-server=utf8 --collation-server=utf8_unicode_ci
 
   dolibarr:
     image: dolibarr_ready:latest
@@ -27,4 +28,3 @@ services:
       - PHP_INI_DATE_TIMEZONE='Europe/Paris'
     ports:
      - 8888:80
-  
