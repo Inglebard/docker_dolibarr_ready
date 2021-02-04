@@ -1,8 +1,8 @@
-FROM php:7.2-apache-buster
+FROM php:7.4-apache-buster
 
 MAINTAINER David RICQ <david@bsilimoges.fr>
 
-ENV DOLI_READY_VERSION 9
+ENV DOLI_READY_VERSION 13
 
 
 ENV WWW_USER_ID 33
