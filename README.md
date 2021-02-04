@@ -20,7 +20,7 @@ You may need to mount app folder to /var/www/html.
 
 ## How to use this image :
 ```
-docker run -it --rm  -p 80:80 -v dolibarr_app:/var/www/html inglebard/dolibarr_ready:latest
+docker run -it --rm  -p 80:80 -v dolibarr_app:/var/www/html inglebard/dolibarr_ready:9
 
 ```
 
