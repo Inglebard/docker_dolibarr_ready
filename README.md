@@ -1,6 +1,6 @@
 # Docker image inglebard/dolibarr_ready
 Dolibarr container ready
-[Github](https://github.com/Inglebard/docker_dolibarr_ready/tree/9)
+[Github](https://github.com/Inglebard/docker_dolibarr_ready/tree/13)
 [Dockerhub](https://hub.docker.com/r/inglebard/dolibarr_ready)
 
 ## Why use this image :
@@ -20,7 +20,7 @@ You may need to mount app folder to /var/www/html.
 
 ## How to use this image :
 ```
-docker run -it --rm  -p 80:80 -v dolibarr_app:/var/www/html inglebard/dolibarr_ready:latest
+docker run -it --rm  -p 80:80 -v dolibarr_app:/var/www/html inglebard/dolibarr_ready:13
 
 ```
 
@@ -29,4 +29,3 @@ Or use the docker-compose.yml file example
 ## Note :
 
 The dolibarr files must be downloaded manually and the permissions must be done inside the container.
-Tested with dolibarr 9.
