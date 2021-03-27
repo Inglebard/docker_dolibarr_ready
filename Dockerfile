@@ -20,7 +20,7 @@ RUN apt-get update -q && apt-get upgrade -yq \
 	libicu-dev \
 	g++ \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
+	&& docker-php-ext-configure gd \
 	&& docker-php-ext-configure intl \
 	&& docker-php-ext-install mysqli pdo pdo_mysql gd soap zip intl
 
