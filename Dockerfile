@@ -14,8 +14,9 @@ RUN apt-get update -q && apt-get upgrade -yq \
 	&& apt-get install -yq \
 	libpng-dev \
 	libjpeg-dev \
-    libxml2-dev \
-    default-mysql-client \
+	libxml2-dev \
+	default-mysql-client \
+	libzip-dev \
 	unzip \
 	libicu-dev \
 	g++ \
