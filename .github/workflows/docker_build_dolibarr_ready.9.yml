@@ -1,4 +1,4 @@
-name: inglebard/dolibarr_ready
+name: inglebard/dolibarr_ready:9
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ 9 ]
   schedule:
-    - cron:  '0 20 * * *'
+    - cron:  '15 20 20 * *'
 jobs:
   build:
     runs-on: ubuntu-latest
