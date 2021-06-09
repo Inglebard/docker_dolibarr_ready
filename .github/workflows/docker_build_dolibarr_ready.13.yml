@@ -1,0 +1,29 @@
+
+name: inglebard/dolibarr_ready:13
+
+on:
+  push:
+    branches: [ 13 ]
+  pull_request:
+    branches: [ 13 ]
+  schedule:
+    - cron:  '15 20 20 * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 9
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build inglebard/dolibarr_ready:13
+      run: |
+        docker build . -t inglebard/dolibarr_ready:13
+    - name: docker push
+      run: |
+        docker push inglebard/dolibarr_ready:13
